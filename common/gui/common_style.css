@@ -1,0 +1,16 @@
+#Pane
+{
+	/* HISHAM THIS IS THE CSS GRADIENT THAT YOU HAD, I KEPT IT JUST IN CASE
+         -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #38a5ff 0%, #0aff80 100%);
+	-fx-pref-height: 521;
+	-fx-pref-width: 787;*/
+        
+        -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #38a5ff 0%, #a90329 100%);
+       /* -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #302f2f 0%, #595959 100%);*/
+       
+       -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #38a5ff 0%, #a90329 100%);
+       
+         -fx-background-color: linear-gradient(from 0% 0% to 75% 100%, #FFF0F5 0%, #FFFFF0 100%);
+       
+        -fx-background-color: linear-gradient(from 0% 0% to 75% 100%, #99CCFF 0%, #FFFFF0 100%);
+}

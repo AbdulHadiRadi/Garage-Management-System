@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="996.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vehicles.logic.Vcon">
+   <children>
+      <AnchorPane fx:id="vehicleTab" layoutX="3.0" layoutY="2.0" minHeight="0.0" minWidth="0.0" prefHeight="996.0" prefWidth="1229.0" style="-fx-background-color: linear-gradient(from 0% 0% to 75% 100%, #FFF0F5 0%, #FFFFF0 100%);">
+         <children>
+            <TableView fx:id="vehicleTable" layoutX="61.0" layoutY="195.0" onKeyReleased="#vehicleDetailKey" onMousePressed="#vehicleDetailAction" prefHeight="375.0" prefWidth="1040.0">
+               <columns>
+                  <TableColumn fx:id="regNumber" prefWidth="110.0" text="Registration " />
+                  <TableColumn fx:id="type" prefWidth="78.0" text=" Type" />
+                  <TableColumn fx:id="model" prefWidth="109.0" text=" Model" />
+                  <TableColumn fx:id="make" minWidth="4.0" prefWidth="108.0" text="Make" />
+                  <TableColumn fx:id="engine" prefWidth="89.0" text="Engine " />
+                  <TableColumn fx:id="fuel" prefWidth="75.0" text="Fuel " />
+                  <TableColumn fx:id="colour" prefWidth="84.0" text="Colour" />
+                  <TableColumn fx:id="warranty" text="Warranty " />
+                  <TableColumn fx:id="mot" prefWidth="97.0" text="MOT" />
+                  <TableColumn fx:id="mileage" prefWidth="104.0" text="Current Mileage" />
+                  <TableColumn fx:id="lastService" prefWidth="127.0" text="Last Service" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="warrantyTable" layoutX="71.0" layoutY="629.0" prefHeight="70.0" prefWidth="429.0">
+              <columns>
+                <TableColumn fx:id="company" prefWidth="121.00003051757812" text="Company" />
+                <TableColumn fx:id="address" prefWidth="141.0" text="Address" />
+                  <TableColumn fx:id="expDate" prefWidth="164.0" text="Expire Date" />
+              </columns>
+            </TableView>
+            <TableView fx:id="bookingTable" layoutX="71.0" layoutY="754.0" prefHeight="154.0" prefWidth="429.0">
+              <columns>
+                  <TableColumn fx:id="bookings" prefWidth="162.00003051757812" text="Booking Date" />
+                  <TableColumn fx:id="bookingType" prefWidth="135.0" text="Type" />
+                <TableColumn fx:id="totalCost" prefWidth="129.0" text="Total Cost" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="partsTable" layoutX="675.0" layoutY="754.0" prefHeight="154.0" prefWidth="436.0">
+              <columns>
+                <TableColumn fx:id="usedParts" prefWidth="166.0" text="Used Parts" />
+                  <TableColumn fx:id="dateParts" prefWidth="137.0" text="Installation Date" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <TableView fx:id="customerTable" layoutX="671.0" layoutY="629.0" prefHeight="70.0" prefWidth="436.0">
+              <columns>
+                <TableColumn fx:id="firstName" prefWidth="108.00003051757812" text="First Name" />
+                <TableColumn fx:id="lastName" prefWidth="107.0" text="Last Name" />
+                  <TableColumn fx:id="phone" minWidth="3.0" prefWidth="93.0" text="Phone" />
+                  <TableColumn fx:id="email" prefWidth="118.0" text="Email" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ToolBar layoutX="2.0" layoutY="126.0" prefHeight="35.0" prefWidth="1222.0">
+               <items>
+                  <Button fx:id="help" mnemonicParsing="false" onAction="#helpAction" prefHeight="25.0" prefWidth="43.0" text="Help" textFill="RED">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="searchField" onKeyReleased="#searchKeyAction" prefHeight="25.0" prefWidth="167.0" promptText="Registration/Manufacturer">
+                     <font>
+                        <Font name="System Bold Italic" size="12.0" />
+                     </font></TextField>
+                  <Button fx:id="searchButton" mnemonicParsing="false" onAction="#searchButtonAction" prefHeight="25.0" prefWidth="109.0" text="Search " textFill="#0e0775">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <ComboBox fx:id="vehicleType" onAction="#vehicleTypeAction" prefHeight="25.0" prefWidth="109.0" promptText="VehicleType">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:id="car" fx:value="Car" />
+                           <String fx:id="van" fx:value="Van" />
+                           <String fx:id="truck" fx:value="Truck" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="template" onAction="#templateSearchAction" prefHeight="25.0" prefWidth="109.0" promptText="Template">
+                      <items>
+                          <FXCollections fx:factory="observableArrayList">
+                  <String fx:id="hondacivic" fx:value="Honda Civic 1.6 Petrol" />
+                  <String fx:id="fordfocus" fx:value="Ford Focus 1.2 Diesel" />
+                  <String fx:id="fordfiesta" fx:value="Ford Fiesta 1.2 Diesel" />
+                  <String fx:id="Fordranger" fx:value="BMW M3 3.0 Petrol" />
+                  <String fx:id="fordedge" fx:value="Ford Edge 1.2 Petrol" />
+                  <String fx:id="bmwX5" fx:value="BMW X5 1.2 Petrol" />
+                  <String fx:id="bmwi8" fx:value="BMW i8 1.6 Petrol" />
+                  <String fx:id="hondahrv" fx:value="Honda HR-V 1.2 Diesel" />
+                  <String fx:id="Lamborghinicountach" fx:value="Lamborghini Countach 1.2 Diesel" />
+                  <String fx:id="Lamborghiniaventador" fx:value="Lamborghini Aventador 1.6 Petrol" />
+                  <String fx:id="bmwx5" fx:value="BMW X5 1.2 Petrol" />
+                  <String fx:id="bmwx6" fx:value="BMW X6 2.2 Diesel" />
+                  <String fx:id="bmwi3" fx:value="BMW i3 2.5 Petrol" />
+                  <String fx:id="hondacrv" fx:value="Honda CR-V 3.0 Diesel" />
+                  <String fx:id="hondansx" fx:value="Honda NSX 2.2 Diesel" />
+                  <String fx:id="hondaJazz" fx:value="Honda Jazz 2.5 Petrol" />
+                  <String fx:id="lamboghinidiablo" fx:value="Lamborghini Diablo 4.0 Petrol" />
+                  <String fx:id="bmwx4" fx:value="BMW X4 1.2 Diesel" />
+                  <String fx:id="bmwx1" fx:value="BMW X1 3.0 Petrol" />
+                  <String fx:id="bmwx3" fx:value="BMW X3 2.0 Diesel" />
+                          </FXCollections>
+                      </items>
+                  </ComboBox>
+                  <Button fx:id="displayVehiclesButton" mnemonicParsing="false" onAction="#displayVehiclesAction" prefHeight="25.0" prefWidth="109.0" text="Display All " textFill="#0e0775">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonAction" prefHeight="25.0" prefWidth="109.0" text="Add New " textFill="#0e0775">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonAction" prefHeight="25.0" prefWidth="109.0" text="Update" textFill="#0e0775">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#deleteButtonAction" prefHeight="25.0" prefWidth="109.0" text="Delete " textFill="#0e0775">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font></Button>
+               </items>
+            </ToolBar>
+            <Separator layoutX="-3.0" layoutY="113.0" prefHeight="3.0" prefWidth="1229.0" />
+            <Label layoutX="493.0" layoutY="14.0" prefHeight="88.0" prefWidth="182.0" text="Vehicle" textFill="#0e0775" underline="true">
+               <font>
+                  <Font name="System Bold" size="31.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="573.0" prefHeight="46.0" prefWidth="182.0" text="Warranty Detail" textFill="#0e0775" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="195.0" layoutY="699.0" prefHeight="46.0" prefWidth="182.0" text="Booking Detail" textFill="#0e0775" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="804.0" layoutY="699.0" prefHeight="46.0" prefWidth="226.0" text="Used Parts Detail" textFill="#0e0775" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="804.0" layoutY="570.0" prefHeight="52.0" prefWidth="248.0" text="Customer Detail" textFill="#0e0775" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="72.0" layoutY="609.0" prefHeight="3.0" prefWidth="428.0" />
+            <Separator layoutX="60.0" layoutY="735.0" prefHeight="3.0" prefWidth="428.0" />
+            <Separator layoutX="675.0" layoutY="734.0" prefHeight="3.0" prefWidth="436.0" />
+            <Separator layoutX="675.0" layoutY="611.0" prefHeight="3.0" prefWidth="428.0" />
+            <Label layoutX="62.0" layoutY="159.0" prefHeight="35.0" prefWidth="548.0" text="Select Vehicle from the Table to see all the information " textFill="#a8a5a5">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Button fx:id="logout" layoutX="1071.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutButtonAction" prefHeight="30.0" prefWidth="140.0" text="Log Out" textFill="#0e0775">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

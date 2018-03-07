@@ -1,3 +1,4 @@
+//Importing required packages
 package vehicles.logic;
 import common.logic.DBConnection;
 import java.sql.Connection;
@@ -6,6 +7,7 @@ import java.sql.Statement;
 
 /**
  * Created by abdul on 2/28/2017.
+ * This class is created for adding and updating Vehicle detail and warrant detail to the Database
  */
 public class AddToDB {
     //instance Variables Declaration

@@ -63,7 +63,7 @@ public class regController implements Initializable{
         void clearButtonAction(ActionEvent event) throws Exception{
             Parent parent = FXMLLoader.load(getClass().getResource("../gui/register.fxml"));
             Scene scene = new Scene(parent);
-            Stage mainWindow; //Here is the magic. We get the reference to main Stage.
+            Stage mainWindow; //getting the reference to main Stage.
             mainWindow = (Stage)  ((Node)event.getSource()).getScene().getWindow();
             mainWindow.setScene(scene);
         }

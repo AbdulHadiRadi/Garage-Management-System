@@ -2,7 +2,7 @@ package vehicles.logic;
 
 /**
  * Created by abdul on 3/14/2017.
- * This class represents the VehicleCustomer object 
+ * This class represents the detail of the vehicle owner named as VehicleCustomer object 
  */
 
 public class VehicleCustomer {

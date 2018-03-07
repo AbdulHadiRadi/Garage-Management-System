@@ -3,6 +3,7 @@ import common.logic.DBConnection;
 import java.text.DecimalFormat;
 /**
  * Created by abdul on 3/14/2017.
+ * This class represents the Booked vehicle object 
  */
 public class BookedVehicle {
     //Instance variables Declaration

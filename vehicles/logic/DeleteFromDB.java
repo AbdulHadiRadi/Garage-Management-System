@@ -6,6 +6,7 @@ import java.sql.Statement;
 
 /**
  * Created by abdul on 2/28/2017.
+ * This class is created to Delete Vehicle from Database
  */
 public class DeleteFromDB {
     //Instance variables

@@ -1,3 +1,6 @@
+/*@author Abdul Hadi
+* Controller for add vehicle fxml
+*/
 package vehicles.logic;
 import common.logic.DBConnection;
 import javafx.event.ActionEvent;

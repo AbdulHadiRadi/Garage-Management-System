@@ -6,8 +6,8 @@
 package vehicles.logic;
 
 /**
- *
  * @author abdul
+ * This class represents the Van object
  */
 public class Van extends Vehicle{
     //Constructor

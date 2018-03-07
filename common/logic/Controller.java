@@ -1,7 +1,7 @@
 package common.logic;
 
 /*@author Abdul Hadi
-* 
+* Controller for Login module
 */
 
 //import required packages

@@ -11,7 +11,7 @@ public class BookedVehicle {
     private String totalCost;
     private String type;
 
-    //Constructor
+    //Empty Constructor
     public BookedVehicle(){}
     //Constructor
     public BookedVehicle( String booking, String type, String totalCost){

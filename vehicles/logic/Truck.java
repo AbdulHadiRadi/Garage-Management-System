@@ -6,8 +6,8 @@
 package vehicles.logic;
 
 /**
- *
- * @author abdul
+ * @author abdul 
+ * This class represents the Truck Object
  */
 public class Truck extends Vehicle{
      //Constructor

@@ -1,4 +1,6 @@
-/*Abdul Hadi : Software Group Project*/
+/*Abdul Hadi : Software Group Project
+* Controller of the Vechile module
+*/
 package vehicles.logic;
 import common.logic.DBConnection;
 import java.net.URL;

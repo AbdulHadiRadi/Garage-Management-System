@@ -1,10 +1,14 @@
+/*
+*@author Abdul Hadi
+*This class represent the Warranty object 
+*/
 package vehicles.logic;
 public class Warranty {
 //Instance Variables declaration
 	private String companyName;
 	private String companyAddress;
 	private String expirationDate;
-         //Constructor
+         //Empty Constructor
 	public Warranty(){
 
 	}

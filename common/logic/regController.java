@@ -2,6 +2,7 @@ package common.logic;
 
 /**
  * Created by abdul on 3/18/2017.
+ *Controller for registraion user interface vehicle module
  */
 import java.net.URL;
 import javafx.event.ActionEvent;
@@ -12,7 +13,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 
 public class regController implements Initializable{
 
+        //Instance variables
         @FXML
         private TextField firstName;
 
@@ -49,13 +50,15 @@ public class regController implements Initializable{
 
         @FXML
         private Label label;
-
+        
+        // registration cancel button action 
         @FXML
         public void cancelButtonAction(ActionEvent event) throws Exception{
             Stage main = (Stage)  ((Node)event.getSource()).getScene().getWindow();
             main.close();
         }
 
+        // registration fields clear button action 
         @FXML
         void clearButtonAction(ActionEvent event) throws Exception{
             Parent parent = FXMLLoader.load(getClass().getResource("../gui/register.fxml"));
@@ -64,24 +67,28 @@ public class regController implements Initializable{
             mainWindow = (Stage)  ((Node)event.getSource()).getScene().getWindow();
             mainWindow.setScene(scene);
         }
-
+        
+        // registration submit button action
         @FXML
         void registerButtonAction(ActionEvent event) throws Exception{
+                
            try{
+                   //empty fields error
                if( userName.getText().isEmpty() || firstName.getText().isEmpty() || surname.getText().isEmpty() || newPassword.getText().isEmpty() || confirmPassword.getText().isEmpty()){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Empty Fields");
                 alert.setContentText("You had to fill all the fields. Some fields are still empty!");
                 alert.showAndWait();
             }
+                   //uerid error  
                else if(userName.getText().length()!=5){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("User ID");
                 alert.setContentText("The ID had to be exactly 5digit numbers!");
                 alert.showAndWait();     
                }   
-               else if((userName.getText().length()==5) && (!uniqueIDCheck(Integer.parseInt(userName.getText())))){
-                   
+                   //existed userid error
+               else if((userName.getText().length()==5) && (!uniqueIDCheck(Integer.parseInt(userName.getText())))){                
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("User ID");
                 alert.setContentText("This ID already exist in the system!");
@@ -89,21 +96,23 @@ public class regController implements Initializable{
                
                }
                else{
-
+                       //No error case for submitting
                   if(newPassword.getText().equals(confirmPassword.getText())){
                     submitDetail();
                     Stage main = (Stage)  ((Node)event.getSource()).getScene().getWindow();
                     main.close();
-               }
-               else{
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Password");
-                alert.setContentText("Both Passwords does not match!");
-                alert.showAndWait();
+                  }     
+                  else{
+                          //Password errors
+                        Alert alert = new Alert(Alert.AlertType.ERROR);
+                        alert.setTitle("Password");
+                        alert.setContentText("Both Passwords does not match!");
+                        alert.showAndWait();
                    }
                }
            }
            catch(NumberFormatException e){
+                   //Non numeric userid error
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("User ID");
                 alert.setContentText("The ID had to be only numbers!");
@@ -111,8 +120,9 @@ public class regController implements Initializable{
            }
     }
 
-
+// Checking unique id for the user. returned true if userid already existed. Otherwise false.
     public boolean uniqueIDCheck(int id){
+            //Using DBConnection object type for the connection with the database.
         DBConnection db = DBConnection.getInstance();
         Connection conn = db.getConnection();
         Statement statement;
@@ -143,14 +153,16 @@ public class regController implements Initializable{
         }
         return isFound;
     }
-
+        // Saving detail to the database
     public void submitDetail(){
+              //Using DBConnection object type for the connection with the database.
          DBConnection db =  DBConnection.getInstance();
          Connection conn = db.getConnection();
          Statement statement;
       try {
              statement = conn.createStatement();
              statement.setQueryTimeout(10);
+              // insert query for submiting user details
              statement.executeUpdate("insert into 'User' values ('"+userName.getText()+"','User','"+firstName.getText()+"','"+surname.getText()+"','"+confirmPassword.getText()+"')");
              statement.close();
              conn.close();
@@ -167,6 +179,7 @@ public class regController implements Initializable{
                 }
         }
 
+        // initial loading fields for the fxml
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         registerButton.disableProperty().bind(firstName.textProperty().isEmpty().or(surname.textProperty().isEmpty()).or(userName.textProperty().isEmpty()).or(newPassword.textProperty().isEmpty()).or(confirmPassword.textProperty().isEmpty()));

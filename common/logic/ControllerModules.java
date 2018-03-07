@@ -1,16 +1,17 @@
-/*@author Abdul Hadi*/
+/*@author Abdul Hadi
+*Controller for all module's fxml
+*/
+//importing packages
 package common.logic;
-
-        import javafx.fxml.FXML;
-        import javafx.fxml.Initializable;
-        import javafx.scene.control.Button;
-        import javafx.scene.control.Tab;
-        import javafx.scene.control.TabPane;
-        import javafx.scene.layout.AnchorPane;
-        import javafx.scene.layout.Pane;
-
-        import java.net.URL;
-        import java.util.ResourceBundle;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.scene.control.TableColumn;
 import javafx.scene.input.KeyEvent;
@@ -18,6 +19,7 @@ import javafx.scene.input.MouseEvent;
 
 public class ControllerModules {
 
+        //Instance variables
     @FXML
     private Pane modulesPane;
 
@@ -99,6 +101,7 @@ public class ControllerModules {
     @FXML
     private TabPane tab;
 
+        // Hiding Admin Module
     public void hideTab() {
         tab.getTabs().remove(5);
     }

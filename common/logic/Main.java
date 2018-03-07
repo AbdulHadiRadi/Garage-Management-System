@@ -1,5 +1,7 @@
 package common.logic;
-
+/* @author Abdul Hadi
+* Main method for the project
+*/
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-     
+        // loading login page
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("common/gui/login.fxml")); 
         
         primaryStage.setTitle("GM-SIS");

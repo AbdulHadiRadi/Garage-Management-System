@@ -1,6 +1,6 @@
 # Garage-Management-System
 
-It was a group project of software Engineering module at 2nd year of my degree.
+2nd year software Engineering group project.
 
 Implemented Language and Tools: Java, Javafx, SQLite.
 

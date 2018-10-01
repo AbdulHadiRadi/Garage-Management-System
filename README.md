@@ -1,16 +1,8 @@
 # Garage-Management-System
 
-2nd year software Engineering group project.
+In my  second-year software Engineering group project, we've developed a desktop application that stores and manages data regarding the customer and their vehicles held by the garage. 
+Used: Scrum, Java Object-Oriented Programming, UML diagrams, MVC design pattern and SQLite
 
-Implemented Language and Tools: Java, Javafx, SQLite.
-
-Mthodolopy:  Waterfall methodology 
-Design Pattern: Model–view–controller design pattern.
-
-The system was Integrated by combining all the independently developed parts together.
-There were 5 parts named Customer, Vehicle, Booking, Parts, Special Parts.
-This project got source code of my part vehicle and common part of the project which was developed by me.  
- 
 This is a very good example of Java fxml project for a beginner.
 
 Requirements:
@@ -44,8 +36,6 @@ from this list.
 2. A vehicle will either be under warranty or not. A warranty means that should a
 vehicle require diagnosis and repair, the warranty company pays for this and
 not the customer.
-Software Engineering Project 2017
-Page 6
 3. If a vehicle is under warranty the name and address of the warranty company
 and the date of expiry of the warranty must be recorded against the vehicle.
 4. The details of each vehicle must be recorded by the garage: registration

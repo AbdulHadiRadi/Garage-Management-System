@@ -1,4 +1,7 @@
-I have managed a six-person group in my second-year software engineering project.
-Arranged scrum meetings regularly to discuss our strategies, and decisions as well as review the progress. 
-We have developed a desktop application that stores and manages data regarding the customer and their vehicles held by the garage. 
-Used Scrum methodology, Java, Object-Oriented Programming, UML diagrams, MVC design pattern, Git Hub and SQLite in the project. This repository represts my developed part of the system.
+Software Engineering Project for Queen Mary University of London (second year, second semester). 
+The team had to develop a desktop application according to the documented requirements. The system stores and manages data regarding the customer and their vehicles held by the garage. 
+
+Each team member received an individual grade. My personal grade for the project was 88.4%. My personal contribution to the effort was:
+Team leader and also responsible for the Vehicle module of the software.
+
+Used Scrum methodology, Java, Object-Oriented Programming, UML diagrams, MVC design pattern, JavaFX for GUI, Git Hub and SQLite in the project. This repository represents my developed part of the system.

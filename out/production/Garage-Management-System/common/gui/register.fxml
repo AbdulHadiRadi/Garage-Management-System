@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="common.logic.regController">
+   <children>
+      <VBox layoutX="95.0" layoutY="75.0" prefHeight="200.0" prefWidth="149.0" spacing="20.0">
+         <children>
+            <TextField fx:id="firstName" promptText="First Name">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="surname" promptText="Surname">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></TextField>
+            <TextField fx:id="userName" promptText="ID(Unique 5 Numbers )">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></TextField>
+            <PasswordField fx:id="newPassword" promptText="New Password">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></PasswordField>
+            <PasswordField fx:id="confirmPassword" promptText="Confirm Password">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font></PasswordField>
+         </children>
+      </VBox>
+      <Label fx:id="label" layoutX="70.0" layoutY="22.0" prefHeight="35.0" prefWidth="222.0" text="New User Registration" textFill="#0e0775">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="40.0" layoutY="315.0" prefHeight="35.0" prefWidth="269.0" spacing="10.0">
+         <children>
+            <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clearButtonAction" prefHeight="25.0" prefWidth="91.0" text="Clear" textFill="#0e0775" />
+            <Button fx:id="registerButton" mnemonicParsing="false" onAction="#registerButtonAction" prefHeight="25.0" prefWidth="79.0" text="Register" textFill="#0e0775" />
+          <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButtonAction" prefHeight="25.0" prefWidth="84.0" text="Cancel" textFill="#0e0775" />
+         </children>
+      </HBox>
+   </children>
+</Pane>

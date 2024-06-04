@@ -1,7 +1,3 @@
-/*
-*@author Abdul Hadi
-* Edit Controller for Edit Vehicle fxml
-*/
 package vehicles.logic;
 import common.logic.DBConnection;
 import javafx.collections.ObservableList;

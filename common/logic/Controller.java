@@ -1,10 +1,8 @@
 package common.logic;
 
-/*@author Abdul Hadi
-* Controller for Login module
-*/
+/*@author Abdul Hadi*/
 
-//import required packages
+
 import javafx.scene.*;
 import javafx.scene.layout.Pane;
 import javafx.event.ActionEvent;
@@ -24,9 +22,6 @@ import java.sql.Statement;
 
 public class Controller {
 
-    
-    //Instance variables declaration
-    
     private boolean isAdmin;
 
     @FXML
@@ -48,22 +43,19 @@ public class Controller {
     private Pane rootPane;
 
 
-    //clear button action 
     public void clearAction() {
         id.setText("");
         password.setText("");
     }
 
-    // login submit button action 
+
     public void loginAction(ActionEvent event) throws Exception{        
     try{
-        if((id.getText().length()==5) && userAuthentication(Integer.parseInt(id.getText()), password.getText())) { 
-            //successful login then loading modules page
+        if((id.getText().length()==5) && userAuthentication(Integer.parseInt(id.getText()), password.getText())) {         
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("common/gui/modules.fxml"));
         Parent root = (Parent)loader.load();
         if(!isAdmin ){
             ControllerModules controller = loader.<ControllerModules>getController();
-            // hiding admin module if the user not admin
             controller.hideTab();
         }
         Scene scene = new Scene(root, 1229 , 996);
@@ -72,20 +64,16 @@ public class Controller {
         mainWindow.setScene(scene);
         }
         else{
-            // failing login action
             id.setText("");
             password.setText("");
             label.setText("Try to login again");
         }
       }catch(NumberFormatException e){
-        //non numeric user action
            label.setText("Try to login again");
       }  
     }
 
-    // User authentication for login
     public boolean userAuthentication(int user, String pass){
-        //Using DBConnection object type for the connection with the database.
         DBConnection db = DBConnection.getInstance();
         Connection conn = db.getConnection();
         Statement statement;

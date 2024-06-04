@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0" prefWidth="428.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="customers.logic.addBill">
+   <children>
+      <Text layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bill Status:" wrappingWidth="92.3535112068057">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="106.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New bill" textAlignment="CENTER" wrappingWidth="239.404296875">
+         <font>
+            <Font name="Cambria" size="36.0" />
+         </font>
+      </Text>
+      <Button fx:id="addNewBill" layoutX="290.0" layoutY="277.0" mnemonicParsing="false" onAction="#addBill" prefHeight="25.0" prefWidth="101.0" text="Add Bill" />
+      <Button layoutX="18.0" layoutY="277.0" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="85.0" text="Cancel" />
+      <RadioButton layoutX="179.0" layoutY="62.0" mnemonicParsing="false" onAction="#selectPaid" prefHeight="30.0" prefWidth="136.0" text="Paid">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="paidOrNot" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="179.0" layoutY="101.0" mnemonicParsing="false" onAction="#selectNotPaid" prefHeight="30.0" prefWidth="119.0" text="Not Paid" toggleGroup="$paidOrNot">
+         <font>
+            <Font size="20.0" />
+         </font></RadioButton>
+      <Text layoutX="18.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking ID" wrappingWidth="100.66796875">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="billBookingBox" layoutX="179.0" layoutY="145.0" prefHeight="25.0" prefWidth="211.0" promptText="Enter customer booking ID here" />
+      <Text layoutX="18.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Part Used ID" wrappingWidth="111.66796386241913">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="18.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="111.66796875">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="18.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SPC Booking ID" wrappingWidth="136.0000018030405">
+         <font>
+            <Font name="Cambria" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="partUsedBox" layoutX="180.0" layoutY="188.0" prefHeight="25.0" prefWidth="211.0" promptText="Enter customer part used ID here" />
+      <TextField fx:id="spcBookingBox" layoutX="180.0" layoutY="228.0" prefHeight="25.0" prefWidth="211.0" promptText="Enter customer spc booking ID here" />
+   </children>
+</Pane>

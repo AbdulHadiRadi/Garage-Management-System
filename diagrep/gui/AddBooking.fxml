@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="473.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diagrep.logic.AddBookingController">
+   <children>
+      <Text layoutX="180.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Booking" wrappingWidth="177.6708830744028">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <SplitMenuButton fx:id="listCustomerID" layoutX="237.0" layoutY="97.0" mnemonicParsing="false" text="Find Customer ID ">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <SplitMenuButton fx:id="listVehicleID" layoutX="237.0" layoutY="141.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="167.0" text="Find Vehicle ID">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <Text layoutX="88.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="       Customer ID:" />
+      <Text layoutX="101.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Vehicle ID:" wrappingWidth="126.91406738758087" />
+      <DatePicker layoutX="236.0" layoutY="223.0" prefHeight="31.0" prefWidth="170.0" />
+      <Text layoutX="50.0" layoutY="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="              Booking  date:" wrappingWidth="177.6708984375" />
+      <Text layoutX="78.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="         Booking type:" />
+      <SplitMenuButton layoutX="237.0" layoutY="183.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="167.0" text="Select type">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Repair" />
+          <MenuItem mnemonicParsing="false" text="Maintenance" />
+        </items>
+      </SplitMenuButton>
+      <TextField layoutX="237.0" layoutY="262.0" prefHeight="31.0" prefWidth="170.0" promptText="Format = HH:MM" />
+      <Text layoutX="111.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Booking time:" />
+      <Button fx:id="confirmAddButton" layoutX="87.0" layoutY="384.0" mnemonicParsing="false" onAction="#ConfirmAddBooking" text="Add booking" />
+      <Button fx:id="resetbooking" layoutX="215.0" layoutY="384.0" mnemonicParsing="false" onAction="#ClearBookingDetails" prefHeight="31.0" prefWidth="107.0" text="Reset" />
+      <Button layoutX="337.0" layoutY="384.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="91.0" text="Cancel" />
+      <Text layoutX="112.0" layoutY="317.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mechanic ID: " />
+      <SplitMenuButton layoutX="240.0" layoutY="300.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="167.0" text="Select Mechanic">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </SplitMenuButton>
+      <Text layoutX="91.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Repair duration:" wrappingWidth="126.91407153010368" />
+      <TextField layoutX="241.0" layoutY="339.0" prefHeight="31.0" prefWidth="167.0" />
+   </children>
+</AnchorPane>

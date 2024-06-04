@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="202.0" prefWidth="301.0" style="-fx-background-color: linear-gradient(from 0% 0% to 75% 100%, #FFF0F5 0%, #FFFFF0 100%);" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parts.logic.StockIncreaseController">
+   <children>
+      <Text fill="#0e0775" layoutX="76.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Stock" underline="true">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="stockIncreaseCombo" layoutX="124.0" layoutY="72.0" prefWidth="150.0" />
+      <TextField fx:id="quanIncrease" layoutX="124.0" layoutY="107.0" prefHeight="27.0" prefWidth="77.0" />
+      <Label layoutX="43.0" layoutY="74.0" text="Part:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="109.0" text="Quantity:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="addStockBtn" layoutX="61.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleAddStockButtonAction" prefHeight="25.0" prefWidth="77.0" text="Add" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelStockBtn" layoutX="151.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleCloseAddStockButtonAction" prefHeight="25.0" prefWidth="77.0" text="Cancel" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+   </children>
+</Pane>

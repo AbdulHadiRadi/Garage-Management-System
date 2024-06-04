@@ -2,16 +2,14 @@ package vehicles.logic;
 
 /**
  * Created by abdul on 3/14/2017.
- * This class represents the detail of the vehicle owner named as VehicleCustomer object 
  */
-
 public class VehicleCustomer {
 //Instance Variables declaration    
     private String firstName;
     private String lastName;
     private String phone;
     private String email;
-    //empty Constructor
+    //Constructor
     public VehicleCustomer(){
 
     }

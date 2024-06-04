@@ -1,7 +1,3 @@
-/*
-*author Abdul Hadi
-* Controller for Adim module's fxml
-*/
 package common.logic;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,7 +28,7 @@ import javax.swing.JOptionPane;
  */
 public class adminController implements Initializable{
 
-// intsance variables
+
     private ObservableList<User> userData = FXCollections.observableArrayList();
 
      DBConnection db =  DBConnection.getInstance();
@@ -160,7 +156,6 @@ public class adminController implements Initializable{
                 
     private User userSelect;
 
-    //initial loaded fields for the fxml
     public void initializingTable(){
         userID.setCellValueFactory(new PropertyValueFactory<>("Id"));
         type.setCellValueFactory(new PropertyValueFactory<>("Type"));
@@ -169,7 +164,7 @@ public class adminController implements Initializable{
         password.setCellValueFactory(new PropertyValueFactory<>("Password"));
         userTable.setItems(userData);
     }
-    //setting Field's Visibility
+
     public void setFieldsVisibility(boolean set){
         username.setVisible(set);
         pass.setVisible(set);
@@ -181,9 +176,8 @@ public class adminController implements Initializable{
         label.setVisible(set);
         sep.setVisible(set);
     }
-    //Delete Registration Action
     @FXML
-    void deleteRegAction(ActionEvent event) {
+        void deleteRegAction(ActionEvent event) {
         User user= userTable.getSelectionModel().getSelectedItem();
         if(user!=null) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -202,9 +196,7 @@ public class adminController implements Initializable{
             alert.showAndWait();
         }
     }
-    // Deleting user from the database
         public void deleteUser(User user){
-           //Using DBConnection object type for the connection with the database.
         DBConnection db =  DBConnection.getInstance();
         Connection conn = db.getConnection();
 
@@ -212,7 +204,6 @@ public class adminController implements Initializable{
         try {
             statement = conn.createStatement();
             statement.setQueryTimeout(10);
-            // Delete Query for deleting user from the database
             statement.executeUpdate("DELETE FROM User WHERE username ='"+user.getId()+"'");
             statement.close();
             conn.close();
@@ -229,7 +220,6 @@ public class adminController implements Initializable{
         }
         }
 
-    //Registration Button Action
         @FXML
         void registrationAction(ActionEvent event) throws Exception{
             FXMLLoader loader = new FXMLLoader(getClass().getResource("../gui/register.fxml"));
@@ -242,8 +232,7 @@ public class adminController implements Initializable{
             addStage.showAndWait();
             viewUserAction();
         }
-    
-    //Logout Button Action
+
         @FXML
         public void logoutButtonAction(ActionEvent event) throws Exception {
             Parent parent = FXMLLoader.load(getClass().getClassLoader().getResource("common/gui/login.fxml"));
@@ -252,10 +241,7 @@ public class adminController implements Initializable{
             mainWindow = (Stage)  ((Node)event.getSource()).getScene().getWindow();
             mainWindow.setScene(scene);
         }
-    
-    //Displaying existing Users from Database
         public void viewUserAction(){
-             //Using DBConnection object type for the connection with the database.
         DBConnection db = DBConnection.getInstance();
         Connection conn = db.getConnection();
         Statement statement;
@@ -328,38 +314,32 @@ public class adminController implements Initializable{
                 }
             }
         }
-    //Cancel Button Action
         public void cancelButtonAction(){
 
             setFieldsVisibility(false);
 
         }
 
-    //Submit Button Action
         public void submitButtonAction(){
         try{
-            // Empty fields error
             if((username.getText().isEmpty() || first.getText().isEmpty() || sur.getText().isEmpty() || pass.getText().isEmpty())){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Empty Fields");
                 alert.setContentText("You had to fill all the fields. Some fields are still empty!");
                 alert.showAndWait();
             }
-            // User id length error
             else if(username.getText().length()!=5){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("User ID");
                 alert.setContentText("ID had to be exjactly 5digit Numbers");
                 alert.showAndWait();
             }
-            // Existing userid error
             else if((username.getText().length()==5) && ((userSelect.getId()!=(Integer.parseInt(username.getText()))) && (!uniqueIDCheck(Integer.parseInt(username.getText()))))){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("User ID");
                 alert.setContentText("This ID already exist in the system!");
                 alert.showAndWait();
             }
-            //
             else {
                 if(Integer.parseInt(username.getText())!=userSelect.getId()){
                     if(uniqueIDCheck(Integer.parseInt(username.getText()))){
@@ -374,7 +354,6 @@ public class adminController implements Initializable{
                     viewUserAction();
                 }
             }
-            //Numeric userid error
         }catch(NumberFormatException e){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("User ID");
@@ -382,15 +361,13 @@ public class adminController implements Initializable{
                 alert.showAndWait();
         }        
     }
-    //Clear Button Action 
-     public void clearButtonAction(){
+        public void clearButtonAction(){
             username.setText("");
             first.setText("");
             sur.setText("");
             pass.setText("");
         }
 
-    //Checking uniqueness of userid
     public boolean uniqueIDCheck(int id){
         DBConnection db = DBConnection.getInstance();
         Connection conn = db.getConnection();
@@ -438,10 +415,7 @@ public class adminController implements Initializable{
         displaySpcTable();
  
     }
-    
-    // Populating Display Special Parts Table
 void displaySpcTable(){
-     //Using DBConnection object type for the connection with the database.
         DBConnection db =  DBConnection.getInstance();
         Connection conn = db.getConnection();
         ObservableList<SpcList> obList = FXCollections.observableArrayList();
@@ -467,7 +441,6 @@ void displaySpcTable(){
         
     }
     
-    //Filling the boxes though mouse selection
     @FXML
     void fillBoxes(MouseEvent event) {
         
@@ -478,7 +451,6 @@ void displaySpcTable(){
         editSpcIdField.setText((Integer.toString(changeSpcTable.getSelectionModel().getSelectedItem().getSpcId())));
     }
     
-    //Add new special part Button Actioin
     @FXML
     void addNewSpcAction(ActionEvent event) {
 
@@ -547,7 +519,7 @@ void displaySpcTable(){
     
 
     
-// Delete Special Parts button Action
+
     @FXML
     void deleteSpcButton(ActionEvent event) {
          
@@ -587,7 +559,6 @@ void displaySpcTable(){
         
     }
 
-    //Edit button action for special parts
     @FXML
     void editSpcButton(ActionEvent event) {
 

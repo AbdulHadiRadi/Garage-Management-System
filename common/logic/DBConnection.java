@@ -1,14 +1,14 @@
+package common.logic;
+
 /**
  * Created by abdul hadi on 2/20/2017.
  */
 /*
- * This DBConnection class is created to make connection with the database.
- * Its object type is used for connecting with the database from other classes.  
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 
-package common.logic;
-
-// importing required packages 
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
@@ -18,6 +18,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 

@@ -2,14 +2,13 @@ package vehicles.logic;
 
 /**
  * Created by abdul on 3/14/2017.
- * This class represents the used parts object for the vehicle 
  */
 public class VehiclePartsUsed {
 
 //Instance Variables declaration
     private String usedParts;
     private String date;
-     //empty Constructor
+     //Constructor
     public VehiclePartsUsed(){
 
     }

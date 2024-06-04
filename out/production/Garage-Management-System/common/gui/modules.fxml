@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="modulesPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="996.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="common.logic.ControllerModules">
+   <children>
+      <TabPane fx:id="tab" layoutX="7.0" layoutY="2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="959.0" prefWidth="1222.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="customer" text="Customer">
+            <content>
+              <AnchorPane fx:id="customerT" minHeight="0.0" minWidth="0.0" prefHeight="980.0" prefWidth="1250.0" />
+                 <fx:include source="../../customers/gui/CustomerAccount.fxml" />
+            </content>
+          </Tab>
+            <Tab fx:id="vehicle" text="Vehicle">
+               <content>
+                  <AnchorPane fx:id="vehicleT" prefHeight="880.0" prefWidth="1250.0" />
+                 <fx:include source="../../vehicles/gui/Vehicle.fxml" />
+               </content></Tab>
+            <Tab fx:id="bookings" text="Bookings">
+               <content>
+                  <AnchorPane fx:id="bookT" prefHeight="959.0" prefWidth="1214.0" />
+            <fx:include source="../../diagrep/gui/Bookingpage.fxml" />
+               </content></Tab>
+            <Tab fx:id="parts" text=" Parts">
+              <content>
+                <AnchorPane fx:id="partT" minHeight="0.0" minWidth="0.0" prefHeight="980.0" prefWidth="1250.0" />
+                <fx:include source="../../parts/gui/Parts.fxml" />
+              </content>
+            </Tab>
+            <Tab fx:id="specialParts" text="Specialist Repair">
+              <content>
+                <AnchorPane fx:id="specialT" minHeight="0.0" minWidth="0.0" prefHeight="980.0" prefWidth="1250.0" />
+              <fx:include source="../../specialist/gui/Specialist.fxml" />
+              </content>
+            </Tab>
+            <Tab fx:id="admin" text="Admin">
+              <content>
+                <AnchorPane fx:id="adminT" minHeight="0.0" minWidth="0.0" prefHeight="880.0" prefWidth="1250.0" />
+                    <fx:include source="admin.fxml" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+
+   </children>
+</Pane>

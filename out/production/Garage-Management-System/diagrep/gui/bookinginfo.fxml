@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="556.0" prefWidth="413.0" style="-fx-background-color: linear-gradient;" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="diagrep.logic.BookinginfoController">
+   <children>
+      <Label layoutX="71.0" layoutY="25.0" text="Booking information ">
+         <font>
+            <Font name="System Bold Italic" size="27.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="info" editable="false" layoutX="12.0" layoutY="64.0" prefHeight="469.0" prefWidth="391.0" style="-fx-background-color: linear-gradient;" />
+   </children>
+</AnchorPane>

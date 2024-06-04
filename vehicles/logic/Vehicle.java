@@ -1,7 +1,3 @@
-/*
-* @author Abdul Hadi
-* This class represents Vehicle object
-*/
 package vehicles.logic;
 
 

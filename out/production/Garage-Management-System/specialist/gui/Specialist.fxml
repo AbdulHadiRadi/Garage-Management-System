@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="959.0" prefWidth="1214.0" style="-fx-background-color: linear-gradient(from 0% 0% to 75% 100%, #FFF0F5 0%, #FFFFF0 100%);" xmlns="http://javafx.com/javafx/8.0.101" xmlns:fx="http://javafx.com/fxml/1" fx:controller="specialist.gui.SpecialistController">
+  <children>
+      <Region disable="true" layoutX="6.0" layoutY="75.0" prefHeight="578.0" prefWidth="1203.0" style="-fx-border-color: black;" />
+      <Text layoutX="14.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search SPC by Detail" wrappingWidth="170.6708984375" />
+      <TextField fx:id="Spc_Search" layoutX="175.0" layoutY="86.0" prefHeight="31.0" prefWidth="216.0" promptText="SPC_SearchField" />
+      <Text fill="#0e0775" layoutX="433.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Specialist Repairs" textAlignment="CENTER" underline="true" wrappingWidth="321.6708984375">
+         <font>
+            <Font name="System Bold" size="31.0" />
+         </font>
+      </Text>
+      <TableView fx:id="SPC_DisplayTable" layoutX="55.0" layoutY="144.0" onMouseClicked="#selectSpcAction" prefHeight="157.0" prefWidth="1093.0">
+         <columns>
+            <TableColumn fx:id="Spc_Search_Id" prefWidth="88.0" text="Spc Id" />
+            <TableColumn fx:id="Spc_Search_Name" prefWidth="118.0" text="Name" />
+            <TableColumn fx:id="Spc_Search_Address" minWidth="0.0" prefWidth="188.0" text="Address" />
+            <TableColumn fx:id="Spc_Search_Phone" prefWidth="108.0" text="Phone" />
+            <TableColumn fx:id="Spc_Search_Email" prefWidth="155.0" text="Email Address" />
+            <TableColumn fx:id="Spc_Search_PartNumber" prefWidth="164.0" text="No. outstanding parts" />
+            <TableColumn fx:id="Spc_Search_VehicleNumber" prefWidth="191.0" text="No. outstanding Vehicles" />
+         </columns>
+      </TableView>
+      <TableView fx:id="SpcBookingsTable" layoutX="345.0" layoutY="659.0" onMouseClicked="#extraInfoLoader" prefHeight="200.0" prefWidth="598.0">
+         <columns>
+            <TableColumn fx:id="View_SpcBookingId" minWidth="0.0" prefWidth="134.0" text="Spc Booking Id" />
+            <TableColumn fx:id="View_Registration" prefWidth="103.0" text="Registration" />
+            <TableColumn fx:id="viewDeliveryDate" prefWidth="125.0" text="Delivery Date" />
+            <TableColumn fx:id="viewReturnDate" prefWidth="121.0" text="Return Date" />
+            <TableColumn fx:id="viewSpcCost" prefWidth="114.0" text="Spc Cost" />
+         </columns>
+      </TableView>
+      <TextField fx:id="Spc_Search_Button" layoutX="43.0" layoutY="715.0" onAction="#searchSpcBooking" prefHeight="36.0" prefWidth="299.0" promptText="Query Bookings By Fname,Sname and reg" />
+      <Text fill="#0e0775" layoutX="47.0" layoutY="692.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Query By  SPC admitted VehiclesParameter" wrappingWidth="292.8720703125">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Text>
+      <Button fx:id="Spc_Search_DeletePart" layoutX="185.0" layoutY="805.0" mnemonicParsing="false" onAction="#DeletePartToSpcBooking" prefHeight="31.0" prefWidth="152.0" text="Delete Part " textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="Spc_Search_EditPart" layoutX="100.0" layoutY="851.0" mnemonicParsing="false" onAction="#editPartToSpcBooking" prefHeight="31.0" prefWidth="152.0" text="Edit Part" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <DatePicker fx:id="deliveryDate" layoutX="519.0" layoutY="86.0" promptText="Delivery Date" />
+      <DatePicker fx:id="returnDate" layoutX="752.0" layoutY="86.0" promptText="Returned Date" />
+      <Button fx:id="AddButton" layoutX="466.0" layoutY="609.0" mnemonicParsing="false" onAction="#addSpcBooking" prefHeight="31.0" prefWidth="313.0" text="Add Specified Vehicle/Part to SPC Booking" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TabPane layoutX="47.0" layoutY="375.0" prefHeight="226.0" prefWidth="1093.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Search Parts">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="search_part_table_add" layoutX="26.0" layoutY="109.0" prefHeight="25.0" prefWidth="192.0" promptText="Search By Part Parameter" />
+                        <TableView fx:id="Search_PartsTable" layoutX="283.0" layoutY="4.0" onMouseClicked="#selectPartsAction" prefHeight="170.0" prefWidth="810.0">
+                           <columns>
+                              <TableColumn fx:id="part_search_usedPartID" prefWidth="111.0" text="Used Part ID" />
+                              <TableColumn fx:id="Parts_Search_ID" prefWidth="68.0" text="Part ID" />
+                              <TableColumn fx:id="Parts_Search_Name" prefWidth="96.0" text="Part Name" />
+                              <TableColumn fx:id="Parts_Search_Description" prefWidth="173.0" text="Part Description" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="refresh_parts_add_table" layoutX="84.0" layoutY="142.0" mnemonicParsing="false" onAction="#refreshPartAddTable" text="Refresh" textFill="#0e0775">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font></Button>
+                        <RadioButton fx:id="searchRegistrationParts" layoutX="49.0" layoutY="14.0" mnemonicParsing="false" text="Search Registration">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="groupPart" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="searchFirstNameParts" layoutX="50.0" layoutY="50.0" mnemonicParsing="false" text="Search Firstname" toggleGroup="$groupPart" />
+                        <RadioButton fx:id="searchSurnameParts" layoutX="51.0" layoutY="83.0" mnemonicParsing="false" text="Search Surname" toggleGroup="$groupPart" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Search Vehicles">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="search_vehicle_table_add" layoutX="23.0" layoutY="94.0" onAction="#refreshVehicleAddTable" prefHeight="25.0" prefWidth="215.0" promptText="Search By Vehcile Parameter" />
+                        <TableView fx:id="Search_VehiclesTable" layoutX="262.0" layoutY="5.0" onMouseClicked="#selectVehicleAction" prefHeight="177.0" prefWidth="832.0">
+                           <columns>
+                              <TableColumn fx:id="Vehicle_Search_Registration" prefWidth="144.0" text="Registration" />
+                              <TableColumn fx:id="Vehicle_Search_Manafacturer" minWidth="0.0" prefWidth="150.0" text="Manafacturer" />
+                              <TableColumn fx:id="Vehicle_Search_Make" minWidth="0.0" prefWidth="131.0" text="Make" />
+                              <TableColumn fx:id="Vehicle_Search_Type" prefWidth="142.0" text="Vehicle Type" />
+                              <TableColumn fx:id="Vehicle_Search_Mileage" prefWidth="150.0" text="Mileage" />
+                              <TableColumn fx:id="Vehicle_Search_Warranty" prefWidth="114.0" text="Warranty" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="refresh_vehicles_add_table" layoutX="84.0" layoutY="142.0" mnemonicParsing="false" onAction="#refreshVehicleAddTable" text="Refresh" />
+                        <RadioButton fx:id="searchRegistration" layoutX="23.0" layoutY="21.0" mnemonicParsing="false" text="Search By Registration">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="groupVehicle" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="searchManafacturer" layoutX="23.0" layoutY="62.0" mnemonicParsing="false" text="Search By Manafacturer" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <Button fx:id="Spc_Search_AddPart" layoutX="23.0" layoutY="805.0" mnemonicParsing="false" onAction="#addPartToSpcBookingButton" prefHeight="31.0" prefWidth="152.0" text="Add Part To List" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="SPC_DisplayTable_Refresh" layoutX="407.0" layoutY="86.0" mnemonicParsing="false" onAction="#spcDisplayTableRefreshButton" prefHeight="31.0" prefWidth="96.0" text="Refresh" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="view_outstanding_parts_details" layoutX="55.0" layoutY="326.0" mnemonicParsing="false" onAction="#partDetailsButton" prefHeight="31.0" prefWidth="228.0" text="View Outstanding Spc Parts" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="view_outstanding_vehicle_details" layoutX="336.0" layoutY="326.0" mnemonicParsing="false" onAction="#vehicleDetailButton" prefHeight="31.0" prefWidth="237.0" text="View Outstanding Spc Vehicles" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="SpcSearchRefresh" layoutX="137.0" layoutY="759.0" mnemonicParsing="false" onAction="#searchSpcBooking" prefHeight="31.0" prefWidth="78.0" text="Refresh" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="viewPartsAtSpcButton" layoutX="623.0" layoutY="326.0" mnemonicParsing="false" onAction="#viewPartsAtSpcAction" prefHeight="31.0" prefWidth="228.0" text="View All Parts at Spc" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="bookingCostField" layoutX="976.0" layoutY="86.0" prefHeight="31.0" prefWidth="224.0" promptText="Enter Cost of Booking">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></TextField>
+      <TextArea fx:id="bookingExtraInfo" editable="false" layoutX="970.0" layoutY="659.0" prefHeight="226.0" prefWidth="228.0" promptText="Extra Details" />
+      <Button fx:id="DeleteBookingButton" layoutX="350.0" layoutY="882.0" mnemonicParsing="false" onAction="#deleteBookingButtonAction" prefHeight="31.0" prefWidth="260.0" text="Delete A Booking" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="viewVehiclesAtSpc" layoutX="920.0" layoutY="326.0" mnemonicParsing="false" onAction="#viewVehiclesAtSpcAction" prefHeight="31.0" prefWidth="228.0" text="View All Vehicles at Spc" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="viewBookingButton" layoutX="685.0" layoutY="882.0" mnemonicParsing="false" onAction="#viewBookingButton" prefHeight="31.0" prefWidth="260.0" text="View A Booking" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="spcLogOut" layoutX="1058.0" layoutY="18.0" mnemonicParsing="false" onAction="#logoutSPCButtonAction" prefHeight="30.0" prefWidth="140.0" text="Log Out" textFill="#0e0775">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

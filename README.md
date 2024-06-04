@@ -9,8 +9,8 @@
 ### Database
 - [Database](database/) - Contents of the database directory
 
-### Vehicles
-- [Logic](vehicles/logic/) - Logic files for vehicles
-- [GUI](vehicles/gui/) - GUI files for vehicles
+### folder
+- [Logic](folder/logic/) - Logic files for vehicles
+- [GUI](folder/gui/) - GUI files for vehicles
 
 Feel free to explore the directories and files for more information about the project.

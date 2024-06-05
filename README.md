@@ -13,4 +13,5 @@
 - [Logic](folder/logic/) - Logic files for vehicles
 - [GUI](folder/gui/) - GUI files for vehicles
 
+GMSIS.pdf - Walkthrough of the System.
 Feel free to explore the directories and files for more information about the project.
